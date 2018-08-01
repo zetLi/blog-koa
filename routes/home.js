@@ -1,8 +1,11 @@
+const PostModel = require('../models/post')
 module.exports = {
     async index (ctx, next) {
+      const posts = await PostModel.find({})
       await ctx.render('index', {
-        title: 'abc-blog',
-        desc: '欢迎关注公众号 JavaScript之禅'
+        title: 'zetLi-blog',
+        desc: '欢迎访问zetLi的博客',
+        posts
       })
     }
   }
